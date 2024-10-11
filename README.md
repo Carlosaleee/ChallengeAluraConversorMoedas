@@ -1,61 +1,68 @@
-# Challenge Conversor de Moeda - Java - Back end
+# Challenge Conversor de Moeda - Java - Back End
 
-O Challenge Conversor de Moeda é um desafio oferecido pela Alura em parceria com a Oracle, com o objetivo de desenvolver uma aplicação Java de conversão de moedas com interação textual via console.
+## Autor
+
+Desenvolvido por **Carlos Alexandre**, como parte do programa de formação Next One Education  **Oracle**  em parceria com a **Alura**.
+
+---
+
+O **Challenge Conversor de Moeda** é um desafio oferecido pela **Alura** em parceria com a **Oracle**, com o objetivo de desenvolver uma aplicação Java de conversão de moedas com interação textual via console.
 
 ## Funcionalidades
 
-O Challenge Conversor de Moeda oferece as seguintes funcionalidades:
+O Conversor de Moeda oferece as seguintes funcionalidades:
 
-1. Conversão de moeda de uma moeda para outra.
-2. Possibilidade de escolher entre pelo menos 6 opções distintas de conversões de moedas em um menu interativo.
-3. Opção adicional para escolher entre as 60 principais moedas do mundo para conversão.
-4. Atualização dinâmica das taxas de conversão por meio de uma API, garantindo dados precisos e em tempo real.
+1. **Conversão de Moeda:** Permite converter valores de uma moeda para outra.
+2. **Seletor de Moeda:** Um menu interativo oferece pelo menos 6 opções distintas de conversão de moedas.
+3. **Opção Expandida:** Possibilidade de escolher entre as 60 principais moedas do mundo para conversão.
+4. **Atualização Dinâmica:** Integração com uma API externa para obter taxas de conversão em tempo real, garantindo dados atualizados e precisos.
 
 ## Instalação e Uso
 
-1. Certifique-se de ter o Java instalado em sua máquina.
-2. Clone este repositório para o seu computador.
-3. Abra o projeto em sua IDE favorita.
-4. Execute a aplicação.
+1. Certifique-se de ter o **Java** instalado em sua máquina.
+2. Clone este repositório para o seu computador:
+   
+   ```bash
+   git clone <URL-do-repositório>
+   ```
+4. Abra o projeto em sua IDE favorita (como IntelliJ, Eclipse, ou NetBeans).
+5. Execute a aplicação diretamente pela IDE ou pelo terminal:
+   
+   ```bash
+   java -jar conversor-moeda.jar
+   ```
 
-## Como usar
+## Como Usar
 
-Após executar a aplicação, você será apresentado com o seguinte menu:
-
-![Menu](https://github.com/rafaelcardosodesouza/challengeAluraConversor/blob/main/Print%20Screen%20de%20referencia/menu.png?raw=true)
-
-Para selecionar uma opção, basta digitar o número correspondente e pressionar Enter. Se optar pela "Outras opções", você poderá escolher entre as 60 principais moedas do mundo para a conversão.
-![Menu2](https://github.com/rafaelcardosodesouza/challengeAluraConversor/blob/main/Print%20Screen%20de%20referencia/as%2060%20principais.png?raw=true)
-
-## Tratamento de Erro
-
-O Conversor de Moeda implementa tratamento de erro para garantir que apenas entradas válidas sejam aceitas. Isso inclui:
-
-- Verificação para garantir que o valor inserido para a conversão seja numérico e positivo.
-![erro1](https://github.com/rafaelcardosodesouza/challengeAluraConversor/blob/main/Print%20Screen%20de%20referencia/tratamento%20de%20erro%201.png?raw=true)
-
-- Validação para garantir que a moeda inserida seja uma moeda válida e suportada pela API de conversão de moeda.
-![erro2](https://github.com/rafaelcardosodesouza/challengeAluraConversor/assets/30002986/e53affcc-f289-4b63-b552-8fc4db1e35d0)
+Após iniciar a aplicação, será exibido um menu interativo no console:
 
 
-Se uma entrada inválida for detectada, a aplicação exibirá uma mensagem de erro apropriada e solicitará uma nova entrada.
+```
+1. Converter de Real (BRL) para Dólar (USD)
+2. Converter de Dólar (USD) para Euro (EUR)
+3. ...
+7. Outras opções (escolha entre as 60 principais moedas)
+```
 
-## Demonstração
+Para selecionar uma opção, digite o número correspondente e pressione **Enter**. Se optar por "Outras opções", você poderá escolher qualquer uma das 60 principais moedas para a conversão.
 
-Assista ao vídeo de demonstração do Conversor de Moeda:
+## Tratamento de Erros
 
-[![Vídeo de Demonstração](https://img.youtube.com/vi/Vms9boQqdqo/maxresdefault.jpg)](https://www.youtube.com/watch?v=Vms9boQqdqo](https://www.youtube.com/watch?v=Vms9boQqdqo))
+O Conversor de Moeda implementa um tratamento de erros robusto para garantir uma experiência fluida ao usuário:
+
+- **Entrada Numérica Válida:** O valor para conversão deve ser numérico e positivo.
+- **Validação de Moedas:** A moeda inserida deve ser uma moeda válida e suportada pela API.
+- Em caso de erro, uma mensagem apropriada será exibida e a aplicação solicitará nova entrada.
 
 ## Consumindo a API
 
-O Conversor de Moeda consome uma API externa para obter as taxas de conversão de moeda em tempo real. Para isso, utiliza a biblioteca padrão do Java `java.net.http.HttpClient` para fazer requisições HTTP à API de conversão de moeda.
+A aplicação utiliza a biblioteca `java.net.http.HttpClient` para fazer requisições HTTP à API de conversão de moeda. A URI da API é gerada dinamicamente com base nas moedas de origem e destino selecionadas pelo usuário. A resposta da API, em formato JSON, é processada usando a biblioteca Gson para extrair a taxa de conversão (`conversion_rate`).
 
-A URI da API é construída dinamicamente de acordo com as moedas de origem e destino selecionadas pelo usuário. Após fazer a requisição, o JSON de resposta é parseado utilizando a biblioteca Gson para extrair o campo "conversion_rate", que representa a taxa de conversão entre as duas moedas especificadas.
-
-O valor da conversão é então calculado multiplicando-se a quantidade da moeda de origem pelo valor da taxa de conversão.
-
+O cálculo da conversão é realizado multiplicando a quantidade inserida pela taxa de conversão obtida.
 
 ## Contribuição
 
-Contribuições são bem-vindas! Se você encontrar algum problema ou tiver sugestões de melhorias, sinta-se à vontade para abrir uma issue ou enviar um pull request.
+Contribuições são bem-vindas! Se você encontrar algum problema ou tiver sugestões de melhorias, fique à vontade para abrir uma issue ou enviar um pull request.
+
+
 
